@@ -11,7 +11,7 @@ app.use(express.urlencoded({extended: true}));
 app.get('/', async (req, res) => { //load up url and get first UNVALIDATED lead
   const auth = new google.auth.GoogleAuth({
     // keyFile: "./creds.json", // file came from https://cloud.google.com/   DEVELOPMENT
-    keyFile: process.env.GOOGLE_APPLICATION_CREDENTIALS, // file came from https://cloud.google.com/
+    keyFile: process.env.GOOGLE_APPLICATION_CREDENTIALS || "./creds.json", // file came from https://cloud.google.com/
     scopes: "https://www.googleapis.com/auth/spreadsheets", //this would change if we were using a diff google api
   })
   const client = await auth.getClient()  //create client instance for auth
@@ -67,7 +67,7 @@ app.listen(PORT, (req, res) => console.log('running on leetzorz'))
 
 async function getAuth(){
   const auth = new google.auth.GoogleAuth({
-    keyFile: "./creds.json", // file came from https://cloud.google.com/
+    keyFile: process.env.GOOGLE_APPLICATION_CREDENTIALS || "./creds.json", // file came from https://cloud.google.com/
     scopes: "https://www.googleapis.com/auth/spreadsheets", //this would change if we were using a diff google api
   })
 
