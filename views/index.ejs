@@ -1,0 +1,34 @@
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- <link rel="stylesheet" href="./styles.css" type="text/css"> -->
+  <title>Document</title>
+</head>
+<body>
+  <!-- <a onclick="openMultiple('<%= dataArr %>')">OPEN ALL SOCIAL PAGES</a> -->
+  <a href="<%= dataArr[8] %>" target="_blank">FB PAGE</a>
+  <a href="<%= dataArr[12] %>" target="_blank">INSTA PAGE</a>
+  <a href="<%= dataArr[20] %>" target="_blank">YT PAGE</a>
+
+  <form action="/validateAndAddNotes/<%= index %>" method="post">
+    <!-- <input name="note" type="text" placeholder="Add a note for this Creator"> -->
+    <select name="validate" id="validate">
+      <option value="yes">-- YES --</option>
+      <option value="no">-- NO --</option>
+    </select>
+    <!-- <input type="hidden" value="<%= index %>"> -->
+    <input type="submit" value="VALIDATE">
+  </form>
+
+  <% var titles = ['Miner Name',	'Influencer Name',	'Influencer Email',	'Influencer Phone',	'Most Popular Platform',	'Influencer Product Category Expertise',	'Facebook',	'Facebook Profile About Section',	'Facebook Handle/URL',	'Facebook Follower Count',	'Instagram',	'Instagram Profile',	'Instagram Handle/URL',	'Instagram Follower Count',	'TikTok',	'TikTok Profile',	'TikTok Handle/URL',	'TokTok Follower Count',	'YouTube',	'YouTube Profile',	'YouTube Handle/URL',	'YouTube Follower Count', 'Microbrand Validated',	'Influencer Contacted',	'Influencer Interested',	'Notes',	'Created By (User Id)',	'Entry Id',	'Entry Date',	'Source Url',	'Transaction Id',	'Payment Amount',	'Payment Date',	'Payment Status',	'Post Id',	'User Agent',	'User IP',	'Total Follower Count'] %>
+  <% for(i in dataArr){ %>
+    <p><strong><%= titles[i] %>:</strong> <%= dataArr[i] %></p>
+
+  <% } %>
+    <!-- <script src="../public/script.js"></script> -->
+    <script src="../public/script.js"></script>
+</body>
+</html>
+
+
+<!-- ['Miner', 'Name',	'Influencer Name',	'Influencer Email',	'Influencer Phone',	'Most Popular Platform',	'Influencer Product Category Expertise',	'Facebook',	'Facebook Profile About Section',	'Facebook Handle/URL',	'Facebook Follower Count',	'Instagram',	'Instagram Profile',	'Instagram Handle/URL',	'Instagram Follower Count',	'TikTok',	'TikTok Profile',	'TikTok Handle/URL',	'TokTok Follower Count',	'YouTube',	'YouTube Profile',	'YouTube Handle/URL',	'YouTube Follower Count', 'Microbrand Validated',	'Influencer Contacted',	'Influencer Interested',	'Notes',	'Created By (User Id)',	'Entry Id',	'Entry Date',	'Source Url',	'Transaction Id',	'Payment Amount',	'Payment Date',	'Payment Status',	'Post Id',	'User Agent',	'User IP',	'Total Follower Count'] -->
