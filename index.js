@@ -1,5 +1,7 @@
 const express = require('express')
 const {google} = require('googleapis')
+var PORT = process.env.PORT || 1337;
+
 
 const app = express()
 app.set('view engine','ejs');
@@ -60,7 +62,7 @@ app.post('/validateAndAddNotes/:index', async (req, res) =>{
   res.redirect(`/`)
 })
 
-app.listen(1337, (req, res) => console.log('running on leetzorz'))
+app.listen(PORT, (req, res) => console.log('running on leetzorz'))
 
 
 async function getAuth(){
